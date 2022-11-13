@@ -1,0 +1,30 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+
+
+export default function ImageOverlay({imageUrl, setOverlay}) {//{ posts }
+  const close = (e) => {
+    e.stopPropagation();
+    setOverlay(false);
+  }
+
+  return (
+    <div onClick={(e) => {close(e)}} id="overlay">
+      <a onClick={(e) => {close(e)}}><FontAwesomeIcon icon={faXmark} /></a>
+      <img onClick={(e) => {e.stopPropagation()}} id="overlayImg" src={imageUrl} />
+    </div>
+  );
+}
+
+{/* <div onclick="toggleOverlay()" id="overlay" class="">
+    <script>
+    function toggleOverlay(){
+        console.log("CLOSE");
+        document.getElementById("overlay").classList.toggle("show");
+        
+    }
+    </script>
+    
+    <a onclick="() => {event.stopPropagation();toggleOverlay()}"><i class="fa-solid fa-xmark"></i></a>
+    <img onclick="event.stopPropagation()" id="overlayImg" src="<%= imageUrl %>">
+</div> */}

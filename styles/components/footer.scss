@@ -1,0 +1,43 @@
+@import '../setting/const.scss';
+
+footer{
+    height: 80px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    
+    background: $gray-background;
+    }
+    
+    #footer_title{
+        position: relative;
+        left: 33px;
+        top: calc(50% - 37px/2 - 0.5px);
+        vertical-align: middle;
+        display: inline-block;
+    
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+        font-weight: 900;
+        font-size: 25px;
+    
+        color: $dark-background;
+    }
+    
+    footer>.container>a>p{
+        display: inline;
+        position: relative;
+        float:right;
+    
+        width: 117px;
+        height: 30px;
+        right: 33px;
+        top: calc(50% - 30px/2);
+    
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+        font-size: 20px;
+        /* identical to box height */
+        
+        text-align: right;
+        
+        color: $darker-background;
+    }

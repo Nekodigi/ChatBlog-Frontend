@@ -1,0 +1,48 @@
+<% imageUrl = ""; %>
+<%- include("overlay", {imageUrl:imageUrl}); %>
+<script>
+function toggleOverlayUrl(url){
+    imageUrl = url;
+    document.getElementById("overlay").classList.toggle("show");
+    document.getElementById("overlayImg").src = url;
+}
+</script>
+
+<div class="paper">
+    <div>
+        <%- include('noteCard'); %>
+
+
+        <div class="heading">
+            <%
+            function formatDate(dt) {
+                var y = dt.getFullYear();
+                var m = ('00' + (dt.getMonth()+1)).slice(-2);
+                var d = ('00' + dt.getDate()).slice(-2);
+                return (y + '-' + m + '-' + d);
+            }
+
+            %>
+            <h2 class="title"><%=currentData["title"] %></h2>
+            <p class="date"><%=formatDate(currentData["date"].toDate()) %></p>
+        </div>
+        <%
+        var images = [currentData["imageUrl"]];
+        try{
+        var images = JSON.parse(currentData["imageUrl"]);
+        }catch(e){}
+        %>
+        
+        <% 
+        var odd = "";
+        if(images.length%2 == 1)odd = "odd"
+        %>
+        <div class="postImages <%= odd %>">
+
+        <% images.forEach(image => { %>
+        <img src='<%= image %>' onclick='toggleOverlayUrl("<%= image %>")' class="postImage">
+        <% }); %>
+        </div>
+        <p class="body"><%- currentData["body"].replace(/\n/g, '<br>') %> </p>
+    </div>
+</div>

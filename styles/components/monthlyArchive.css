@@ -1,0 +1,55 @@
+#MonthlyArchive {
+  margin: 40px 30px;
+}
+#MonthlyArchive h2 {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  /* identical to box height */
+  color: #000000;
+}
+#MonthlyArchive .years {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 16px;
+  margin-left: 20px;
+  gap: 8px;
+}
+#MonthlyArchive .years .months {
+  margin-top: 2px;
+  margin-left: 30px;
+}
+#MonthlyArchive .years .year { /*reset button*/
+  display: block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+#MonthlyArchive .years .year, #MonthlyArchive .years .month {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 1rem;
+  /* identical to box height */
+  color: #4D4D4D;
+}
+#MonthlyArchive .years .year:hover, #MonthlyArchive .years .month:hover {
+  color: #5CA1E5;
+}
+#MonthlyArchive .years i {
+  pointer-events: none;
+}
+#MonthlyArchive .years a, #MonthlyArchive .years a:hover, #MonthlyArchive .years a:visited {
+  color: inherit;
+}
+
+.months {
+  display: none;
+}
+
+.show {
+  display: block;
+}/*# sourceMappingURL=monthlyArchive.css.map */

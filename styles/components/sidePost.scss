@@ -1,0 +1,22 @@
+@import '../setting/const.scss';
+
+.movePageContainer{
+    height:56px;
+    padding-bottom: 30px;
+
+    p{
+        display: inline-block;
+        position: relative;
+        padding: 16px 0;
+    
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+        font-size: 1rem;
+    
+        color: $dark;
+    }
+    
+    .movePageLeft{padding-left: 70px;}
+    
+    .movePageRight{padding-right: 70px;float: right;}
+}
+

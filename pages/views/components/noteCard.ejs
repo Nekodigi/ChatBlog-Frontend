@@ -1,0 +1,15 @@
+<% 
+var status = currentData["status"];
+if(status==="approved"){ %>
+<a href='/contents/<%= currentData["id"]%>' class="noteCard approved"> 
+    <p>投稿が承認され、一覧からも確認できるようになりました。このメッセージをタップして新しいページに移動してください。</p>
+</a>
+<% } else if(status==="waitingApproval") { %>
+<div class="noteCard waitingApproval"> 
+    <p>ただいま確認待ちです。事務局が承認するまで一覧には表示されません。</p>
+</div>
+<% } else if(status==="denied") { %>
+<div class="noteCard denied"> 
+    <p>投稿内容に問題があったため、投稿が拒否されました。内容を見直して再投稿頂けるようお願い致します。</p>
+</div>
+<% } %>

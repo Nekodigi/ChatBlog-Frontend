@@ -1,0 +1,99 @@
+@import '../setting/const.scss';
+@import '../utility/text.scss';
+
+.noteCard{
+    border-radius: 5px;
+    padding:16px 20px;
+
+    p{
+        font-weight: 700;
+        font-size: 16px;
+    }
+
+    &.waiting_approval{
+        background:$warning;
+        p{
+            color:$black;
+        }
+    }
+    
+    &.approved{
+        background: $yes;
+        p{
+            color:$white;
+        }
+    }
+
+    &.denied{
+        background:$no;
+        p{
+            color:$white;
+        }
+    }
+
+    
+}
+
+.paper{
+    margin:30px;
+    padding:30px 40px;
+    background:$white;
+
+    div{
+        display:flex;
+        gap:30px;
+        overflow: hidden;
+        flex-direction: column;
+
+        .heading{
+            border-bottom: 2px solid $white-gray;
+
+            .title{
+                font-size: 2rem;
+            
+                @include showNLine(3);
+            
+                color: $black;
+            }
+    
+            .date{
+                position: relative;
+                margin-top: 6px;
+                margin-bottom: 14px;
+            
+                color: $gray;
+            }
+        }
+        
+        .postImages{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+
+            .postImage{
+                display: block;
+                width:100%;
+                aspect-ratio: 1/1;
+                
+                object-fit: cover;
+            }
+        }
+
+        .odd .postImage:first-child{
+            grid-column: 1/3;
+            aspect-ratio: 16/9;
+        }
+        
+        .body{
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.75rem;
+            /* or 170% */
+        
+            letter-spacing: 0.05em;
+        
+            color: $white-dark;
+        }
+    }
+}
+

@@ -1,0 +1,42 @@
+<div class="border"></div>
+
+<div id="MonthlyArchive">
+    <h2>Monthly Archive</h2>
+    <div class="years">
+        <script>
+        function show(year) {//https://www.w3schools.com/howto/howto_js_dropdown.asp
+            document.getElementById("i"+year).classList.toggle("show");
+            document.getElementById(year).classList.toggle("show");
+        }
+        </script>
+        <% var currentYY = 100; 
+        Object.keys(postPerMonth).sort().reverse().forEach((key, i) => {
+        var YY = Number(key.substring(0, 2));
+        var MM = Number(key.substring(2, 4));
+        var YYMM = Number(key);
+        if(YY < currentYY) { 
+            var flag = "show";
+            %>
+            <% if(currentYY != 100){ flag = ""%>
+            </div>
+            </div>
+            <% }
+            currentYY = YY; %>
+            <div>
+            <button onclick="show(<%=YY%>)" class="year"><i class="fa-solid fa-caret-right" id="i<%=YY%>"></i>&nbsp;&nbsp;20<%= YY %></button>
+            <div class="months <%=flag%>" id="<%=YY%>">
+            
+        <% } %>
+        
+        <% var query = `?start=${YYMM}0000&end=${YYMM+1}0000&statusMessage=20${YY}年${MM}月の記事一覧`; %>
+        <a href='/contents/<%= query %>'>
+        <p class="month"><%=`20${YY} / ${MM}  (${postPerMonth[key]})`;%><p>
+        </a>
+        <% }); %>
+        <% if(currentYY != 100){ %> 
+        </div>
+        </div>
+        <% } %>
+        
+    </div>
+</div>

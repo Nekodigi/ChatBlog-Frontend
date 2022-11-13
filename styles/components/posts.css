@@ -1,0 +1,57 @@
+#statusMessage {
+  padding-left: 30px;
+  padding-top: 30px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
+}
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px;
+}
+.posts a {
+  width: calc((100% - 20px) / 2);
+  background: #FFFFFF;
+}
+.posts a .thumbnail {
+  width: 100%;
+  aspect-ratio: 16/9;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.posts a .discription {
+  display: flex;
+  gap: 14px;
+  flex-direction: column;
+  margin: 14px 20px;
+  overflow: hidden; /*to use child margin as parent size*/
+  word-break: break-all;
+}
+.posts a .discription h2 {
+  height: 46px;
+  min-width: 0px;
+  font-weight: 700;
+  font-size: 1rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  color: #000000;
+}
+.posts a .discription p {
+  position: relative;
+  height: 57px;
+  min-width: 0px;
+  font-weight: 400;
+  font-size: 13px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  color: #4D4D4D;
+}/*# sourceMappingURL=posts.css.map */

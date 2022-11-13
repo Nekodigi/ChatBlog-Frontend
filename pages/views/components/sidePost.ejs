@@ -1,0 +1,12 @@
+
+
+<% if (!(next == undefined && previous == undefined)){ %>
+<div class="movePageContainer">
+    <% if(next != undefined){ %>
+    <a href="/contents/<%=next%>"><p class="movePageLeft"><i class="fa-solid fa-angle-left"></i> 前のページ</p></a>
+    <% } %>
+    <% if(previous != undefined){ %>
+    <a href="/contents/<%=previous%>"><p class="movePageRight">次のページ <i class="fa-solid fa-angle-right"></i></p></a>
+    <% } %>
+</div>
+<% } %>

@@ -1,0 +1,6 @@
+@mixin showNLine($n){
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $n;
+    overflow: hidden;
+}

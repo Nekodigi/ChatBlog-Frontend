@@ -1,0 +1,19 @@
+.movePageContainer {
+  height: 56px;
+  padding-bottom: 30px;
+}
+.movePageContainer p {
+  display: inline-block;
+  position: relative;
+  padding: 16px 0;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 1rem;
+  color: #4D4D4D;
+}
+.movePageContainer .movePageLeft {
+  padding-left: 70px;
+}
+.movePageContainer .movePageRight {
+  padding-right: 70px;
+  float: right;
+}/*# sourceMappingURL=sidePost.css.map */

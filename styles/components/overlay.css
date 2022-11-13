@@ -1,0 +1,44 @@
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  z-index: 20; /* Specify a stack order in case you're using a different order for other elements */
+}
+#overlay img {
+  position: absolute;
+  max-width: 100vw;
+  max-height: calc(100vh - 120px);
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+#overlay a {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  right: 6px;
+  top: 6px;
+  cursor: pointer;
+}
+#overlay i {
+  position: relative;
+  left: 16px;
+  top: 10px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 30px;
+  color: #FFFFFF;
+}
+
+.show {
+  display: block !important;
+}/*# sourceMappingURL=overlay.css.map */

@@ -1,0 +1,12 @@
+<div onclick="toggleOverlay()" id="overlay" class="">
+    <script>
+    function toggleOverlay(){
+        console.log("CLOSE");
+        document.getElementById("overlay").classList.toggle("show");
+        
+    }
+    </script>
+    
+    <a onclick="() => {event.stopPropagation();toggleOverlay()}"><i class="fa-solid fa-xmark"></i></a>
+    <img onclick="event.stopPropagation()" id="overlayImg" src="<%= imageUrl %>">
+</div>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('utilities/headSetting'); %>
+    <title>記事一覧</title>
+</head>
+<body>
+    <%- include('components/header'); %>
+    <div class="page">
+        <div class="container">
+        <%- include('components/posts'); %>
+        <%- include("components/sidePost", {next:queryNext, previous:queryPrev}); %>
+        <%- include("components/monthlyArchive"); %>
+        </div>
+    </div>
+    <%- include('components/footer'); %>
+</body>
+</html>

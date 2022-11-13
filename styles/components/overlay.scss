@@ -1,0 +1,49 @@
+@import '../setting/const.scss';
+
+#overlay{//https://www.w3schools.com/howto/howto_css_overlay.asp
+    position: fixed; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 20; /* Specify a stack order in case you're using a different order for other elements */
+    //cursor: pointer; /* Add a pointer on hover */
+
+    img{
+        position: absolute;
+        max-width: 100vw;
+        max-height: calc(100vh - 60px*2);
+        margin:auto;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+    }
+
+    a{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        right: 6px;
+        top: 6px;
+        cursor: pointer;
+    }
+
+    svg{
+        position:relative;
+        left: 16px;
+        top: 10px;
+        
+        font-size: 26px;
+        line-height: 30px;
+
+        color:$white;
+    }
+}
+
+.show{
+    display:block !important;
+}

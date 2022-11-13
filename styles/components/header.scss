@@ -1,0 +1,48 @@
+@import '../setting/const';
+
+header{
+    width:100%;
+    height:50px;
+    background: $primary;
+
+    h1{
+        display: inline;
+        position: relative;
+        margin-left: 33px;
+        top: calc(50% - 37px/2 - 0.5px);
+    
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+        font-weight: 900;
+        font-size: 25px;
+    
+        color: $slight-primary;
+    }
+
+    p{
+        display: inline;
+        position: relative;
+        float:right;
+        margin-left: 20px;
+        top: calc(50% - 30px/2 - 0.5px);
+    
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        /* identical to box height */
+    
+        text-align: right;
+    
+        color: $slight-primary;
+    }
+
+    #archive{
+        margin-right:33px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    header p{
+        display:none;
+    }
+}
