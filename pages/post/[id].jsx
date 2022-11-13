@@ -1,10 +1,12 @@
 import MonthlyArchive from '../../components/monthlyArchive';
 import Post  from '../../components/post/post';
+import SidePage from '../../components/sidePage';
 
 export default function PostView({ post, counts }) {
   return (
     <div>
       <Post post={post}/>
+      <SidePage next={post.next_id} prev={post.prev_id}/>
       <MonthlyArchive counts={counts}/>
     </div>
   );

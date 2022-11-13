@@ -7,7 +7,8 @@ export default function SidePage({next, prev}) {
 
   if(!(next === undefined && prev === undefined)) return (
     <div className="movePageContainer">
-      {next !== undefined ? <Link class="movePageLeft" href={next}><FontAwesomeIcon icon={}/>前のページ</Link>
+      {next !== undefined ? <Link className="movePageLeft" href={next}><p><FontAwesomeIcon icon={faAngleLeft}/> 前のページ</p></Link> : null}
+      {prev !== undefined ? <Link className="movePageRight" href={prev}><p>次のページ <FontAwesomeIcon icon={faAngleRight}/></p></Link> : null}
     </div>
   );
 }

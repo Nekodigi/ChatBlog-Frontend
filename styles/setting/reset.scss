@@ -1,4 +1,4 @@
-
+@import './const.scss';
 
 *{
     margin:0;
@@ -11,4 +11,8 @@
 
 a{
     text-decoration: none;
+
+    :hover{
+        color:$link-active;
+    }
 }
