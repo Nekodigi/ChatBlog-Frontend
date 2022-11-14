@@ -8,7 +8,7 @@ export default function Post({ post, note }) {//{ posts }
   const [overlay, setOverlay] = useState(false);
   const [imageUrl, setImageUrl] = useState("");
 
-  let odd = post.post.image_paths.length%2 === 1 ? "odd" : "";
+  let odd = post.image_paths.length%2 === 1 ? "odd" : "";
 
   return (
     <div>
@@ -17,15 +17,15 @@ export default function Post({ post, note }) {//{ posts }
         <div>
           {note ? <Note note={note} /> : null}
           <div className="heading">
-            <h2 className="title">{post.post.title}</h2>
-            <p className="date">{formatDate(post.post.created_date)}</p>
+            <h2 className="title">{post.title}</h2>
+            <p className="date">{formatDate(post.created_date)}</p>
           </div>
           <div className={`postImages ${odd}`}>
-            {post.post.image_paths.map((path) => {
-              return <img key={path} src={imagePathUrl(path)} onClick={() => {setOverlay(true); setImageUrl(imagePathUrl(path))}} className="postImage"/>
+            {post.image_paths.map((path) => {
+              return <img key={path} src={imagePathUrl(path)} onClick={() => {setOverlay(true); setImageUrl(imagePathUrl(path))}} className="postImage" alt='image'/>
             })}
           </div>
-          <p className="body">{post.post.body}</p>
+          <p className="body">{post.body}</p>
         </div>
       </div>
     </div>

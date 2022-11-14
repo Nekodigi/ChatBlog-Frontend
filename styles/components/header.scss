@@ -18,6 +18,10 @@ header{
         color: $slight-primary;
     }
 
+    h1:hover{
+        color: $slight-primary;
+    }
+
     p{
         display: inline;
         position: relative;
@@ -33,6 +37,10 @@ header{
     
         text-align: right;
     
+        color: $slight-primary;
+    }
+
+    p:hover{
         color: $slight-primary;
     }
 
