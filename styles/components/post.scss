@@ -10,21 +10,21 @@
         font-size: 16px;
     }
 
-    &.waiting_approval{
+    &.warning{
         background:$warning;
         p{
             color:$black;
         }
     }
     
-    &.approved{
+    &.success{
         background: $yes;
         p{
             color:$white;
         }
     }
 
-    &.denied{
+    &.danger{
         background:$no;
         p{
             color:$white;

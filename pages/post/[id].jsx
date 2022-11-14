@@ -13,10 +13,8 @@ export default function PostView({ post, counts }) {
 }////post={post}
   
 export async function getStaticProps({params}) {//getServerSideProps   getStaticProps
-  const res_p = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/post/${params.id}`);
-  const post = await res_p.json();
-  const res_c = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/variable/monthly`);
-  const counts = await res_c.json();
+  const post = await (await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/post/${params.id}`)).json();
+  const counts = await (await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/variable/monthly`)).json();
   return { props: { post, counts } };
 }
 
