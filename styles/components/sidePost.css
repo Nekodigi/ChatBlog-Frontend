@@ -2,7 +2,7 @@
   height: 56px;
   padding-bottom: 30px;
 }
-.movePageContainer p {
+.movePageContainer a {
   display: inline-block;
   position: relative;
   padding: 16px 0;

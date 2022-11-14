@@ -31,6 +31,7 @@
           appearance: none;
 }
 #MonthlyArchive .years .year, #MonthlyArchive .years .month {
+  display: block;
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-size: 1rem;
   /* identical to box height */
@@ -41,15 +42,4 @@
 }
 #MonthlyArchive .years i {
   pointer-events: none;
-}
-#MonthlyArchive .years a, #MonthlyArchive .years a:hover, #MonthlyArchive .years a:visited {
-  color: inherit;
-}
-
-.months {
-  display: none;
-}
-
-.show {
-  display: block;
 }/*# sourceMappingURL=monthlyArchive.css.map */
