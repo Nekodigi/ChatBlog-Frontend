@@ -1,6 +1,16 @@
 {
   "hosting": {
     "public": "out",
+    "cleanUrls": true,
+    "redirects":[ {
+      "source": "/",
+      "destination": "/archive/all/1",
+      "type": 301
+    },{
+      "source": "/archive",
+      "destination": "/archive/all/1",
+      "type": 301
+    }],
     "ignore": [
       "firebase.json",
       "**/.*",

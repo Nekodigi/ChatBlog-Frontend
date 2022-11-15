@@ -7,7 +7,7 @@ export default function index({ YYMM, posts, counts }) {
   let prev_url = posts.next_id ? `/archive/monthly/${YYMM.toString()}/${posts.next_id.toString()}` : undefined;
     return (
       <div>
-        <Posts posts={posts.posts}/>
+        <Posts posts={posts.posts} statusMessage={`20${YYMM.substring(0,2)}年${YYMM.substring(2,4)}月の記事一覧`}/>
         <SidePage prev={prev_url} next={next_url}/>
         <MonthlyArchive counts={counts}/>
       </div>
