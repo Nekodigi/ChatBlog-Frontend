@@ -1,9 +1,8 @@
 name: Deploy to firebase
 
 on:
-  repository_dispatch:
-    types:
-      - my-custom-type
+  workflow_dispatch:
+  
 jobs:
   deploy:
     runs-on: ubuntu-latest
