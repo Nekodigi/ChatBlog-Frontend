@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
 
 export default function ImageOverlay({imageUrl, setOverlay}) {//{ posts }
@@ -11,7 +12,7 @@ export default function ImageOverlay({imageUrl, setOverlay}) {//{ posts }
   return (
     <div onClick={(e) => {close(e)}} id="overlay">
       <a onClick={(e) => {close(e)}}><FontAwesomeIcon icon={faXmark} /></a>
-      <img onClick={(e) => {e.stopPropagation()}} id="overlayImg" src={imageUrl} />
+      <Image onClick={(e) => {e.stopPropagation()}} id="overlayImg" src={imageUrl} alt="fullsize-image"/>
     </div>
   );
 }

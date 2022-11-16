@@ -3,6 +3,7 @@ import ImageOverlay from './imageOverlay';
 import { useState } from 'react';
 import { imagePathUrl } from '../../utils/firebase';
 import { formatDate } from '../../utils/date';
+import Image from 'next/image';
 
 export default function Post({ post, note }) {//{ posts }
   const [overlay, setOverlay] = useState(false);
@@ -22,7 +23,7 @@ export default function Post({ post, note }) {//{ posts }
           </div>
           <div className={`postImages ${odd}`}>
             {post.image_paths.map((path) => {
-              return <img key={path} src={imagePathUrl(path)} onClick={() => {setOverlay(true); setImageUrl(imagePathUrl(path))}} className="postImage" alt='image'/>
+              return <Image key={path} src={imagePathUrl(path)} onClick={() => {setOverlay(true); setImageUrl(imagePathUrl(path))}} className="postImage" alt='image'/>
             })}
           </div>
           <p className="body">{post.body}</p>
