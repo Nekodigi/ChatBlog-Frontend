@@ -4,5 +4,5 @@ export const projectDomain = () => {
 }
 
 export const imagePathUrl = (path) => {
-    return `https://firebasestorage.googleapis.com/v0/b/${projectDomain()}/o/${encodeURIComponent(path)}?alt=media`;
+    return `https://storage.googleapis.com/${projectDomain()}/${encodeURIComponent(path)}`;
 }

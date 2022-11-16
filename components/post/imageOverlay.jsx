@@ -12,7 +12,7 @@ export default function ImageOverlay({imageUrl, setOverlay}) {//{ posts }
   return (
     <div onClick={(e) => {close(e)}} id="overlay">
       <a onClick={(e) => {close(e)}}><FontAwesomeIcon icon={faXmark} /></a>
-      <Image onClick={(e) => {e.stopPropagation()}} id="overlayImg" src={imageUrl} alt="fullsize-image"/>
+      <img onClick={(e) => {e.stopPropagation()}} id="overlayImg" src={imageUrl} alt="fullsize-image"/>
     </div>
   );
 }

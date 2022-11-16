@@ -23,7 +23,7 @@ export default function Post({ post, note }) {//{ posts }
           </div>
           <div className={`postImages ${odd}`}>
             {post.image_paths.map((path) => {
-              return <Image key={path} src={imagePathUrl(path)} onClick={() => {setOverlay(true); setImageUrl(imagePathUrl(path))}} className="postImage" alt='image'/>
+              return <img key={path} src={imagePathUrl(path)} onClick={() => {setOverlay(true); setImageUrl(imagePathUrl(path))}} className="postImage" alt='image'/>
             })}
           </div>
           <p className="body">{post.body}</p>
