@@ -10,13 +10,17 @@ export default function PreviewView() {
 
   const statusToNote = (res) => {
     let note = undefined;
-    switch(res){
+    switch(res, post){
       case "change_to_denied":
         note = {
           message:"投稿の拒否に成功しました。一覧には表示されなくなります。",type:"success"}
         break;
       case "already_denied":
-        note = {message:"既に投稿は拒否されており、一覧に表示されていません。", type:"warning"};
+        if(post.is_applied){
+          note = {message:"既に投稿は拒否されており、一覧に表示されていません。", type:"warning"};
+        }else{
+          note = {message:"既に投稿は拒否されており、処理が完了した後に一覧に表示されなくなります。", type:"warning"};
+        }
         break;
       case "wrong_hash":
         note = {message:"URLが間違っています。", type:"danger"};
@@ -42,6 +46,6 @@ export default function PreviewView() {
   }, [id, router]);
 
   return (
-    post ? <Post post={post} note={statusToNote(res)}/> : null
+    post ? <Post post={post} note={statusToNote(res, post)}/> : null
   );
 }

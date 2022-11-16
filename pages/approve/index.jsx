@@ -8,7 +8,7 @@ export default function PreviewView() {
   const id = router.query.id;
   const hash = router.query.hash;
 
-  const statusToNote = (res) => {
+  const statusToNote = (res,post) => {
     let note = undefined;
     switch(res){
       case "change_to_approved":
@@ -16,7 +16,11 @@ export default function PreviewView() {
           message:"投稿の承認に成功しました。しばらくすると一覧に表示されます。",type:"success"}
         break;
       case "already_approved":
-        note = {message:"既に投稿は承認されており、一覧に表示されています。", type:"warning"};
+        if(post.is_applied){
+          note = {message:"既に投稿は承認されており、一覧に表示されています。", type:"warning"};
+        }else{
+          note = {message:"既に投稿は承認されており、処理が完了した後に一覧に表示されます。", type:"warning"};
+        }
         break;
       case "wrong_hash":
         note = {message:"URLが間違っています。", type:"danger"};
@@ -42,6 +46,6 @@ export default function PreviewView() {
   }, [id, router]);
 
   return (
-    post ? <Post post={post} note={statusToNote(res)}/> : null
+    post ? <Post post={post} note={statusToNote(res,post)}/> : null
   );
 }
