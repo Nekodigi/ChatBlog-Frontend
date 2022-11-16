@@ -1,4 +1,3 @@
-import Preview  from 'components/preview';
 import { useEffect, useState } from 'react';
 import { useRouter } from "next/router";
 import Post  from 'components/post/post';
@@ -46,6 +45,6 @@ export default function PreviewView() {
   }, [id, router]);
 
   return (
-    post ? <Post post={post} note={statusToNote(res,post)}/> : null
+    <Post post={post} note={post && res ? statusToNote(res,post) : null}/>
   );
 }

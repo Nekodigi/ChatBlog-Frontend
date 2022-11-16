@@ -1,4 +1,3 @@
-import Preview  from 'components/preview';
 import { useEffect, useState } from 'react';
 import { useRouter } from "next/router";
 import Post  from 'components/post/post';
@@ -8,9 +7,9 @@ export default function PreviewView() {
   const id = router.query.id;
   const hash = router.query.hash;
 
-  const statusToNote = (res) => {
+  const statusToNote = (res, post) => {
     let note = undefined;
-    switch(res, post){
+    switch(res){
       case "change_to_denied":
         note = {
           message:"投稿の拒否に成功しました。一覧には表示されなくなります。",type:"success"}
@@ -46,6 +45,6 @@ export default function PreviewView() {
   }, [id, router]);
 
   return (
-    post ? <Post post={post} note={statusToNote(res, post)}/> : null
+    <Post post={post} note={post && res ? statusToNote(res, post) : null}/>
   );
 }

@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import Image from "next/image";
 
 
 export default function ImageOverlay({imageUrl, setOverlay}) {//{ posts }

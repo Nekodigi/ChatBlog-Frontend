@@ -31,6 +31,12 @@
         }
     }
 
+    &.info{
+        background:$info;
+        p{
+            color:$white;
+        }
+    }
     
 }
 
