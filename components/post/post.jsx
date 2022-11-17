@@ -13,7 +13,7 @@ export default function Post({ post, note }) {//{ posts }
     <div>
       {overlay ? <ImageOverlay imageUrl={imageUrl} setOverlay={setOverlay}/> : null}
       <div className="paper">
-        {post ? 
+        {post && post.title != undefined ? 
           <div>
             {note ? <Note note={note} /> : null}
             
@@ -28,7 +28,7 @@ export default function Post({ post, note }) {//{ posts }
             </div>
             <p className="body">{post.body}</p>
           </div>
-        : <Note note={{message:"読み込み中です。しばらくお待ちください。", type:"info"}} />}
+        : <Note note={note ? note : {message:"読み込み中です。しばらくお待ちください。", type:"info"}} />}
       </div>
     </div>
   );

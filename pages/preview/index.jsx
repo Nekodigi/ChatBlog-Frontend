@@ -15,8 +15,7 @@ export default function PreviewView() {
           note = {message:"投稿が承認され、一覧からも確認できるようになりました。このメッセージをタップして新しいページに移動してください。"
             ,type:"success",url:`/post/${post.id}`}
         }else{
-          note = {message:"投稿が承認されたため、処理が完了後に一覧からも確認できるようになります。"
-            ,type:"success",url:`/post/${post.id}`}
+          note = {message:"投稿が承認されたため、処理が完了後に一覧からも確認できるようになります。",type:"success"}
         }
         break;
       case "waiting_approval":
@@ -29,6 +28,9 @@ export default function PreviewView() {
           note = {message:"投稿内容に問題があったため、投稿が拒否されました。内容を見直して再投稿頂けるようお願い致します。", type:"danger"};
         }
         break;
+      case "error":
+        note = {message:"ページは存在しないか、削除されています。", type:"danger"};
+        break;
     }
     return note;
   }
@@ -38,7 +40,12 @@ export default function PreviewView() {
       // useEffect自体ではasyncの関数を受け取れないので内部で関数を定義して呼び出す。
       const access_db = async () => {//how to use router param in useEffect https://zenn.dev/kiyokiyoabc/articles/d3a8464367094a
         if(router.isReady){
-          const post = await (await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/preview/${id}`)).json();//CORS
+          var post = {};
+          try{
+            post = await (await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/preview/${id}`)).json();//CORS
+          }catch(e){
+            post.status = "error";
+          }
           setPost(post); // stateに反映する
         }
       };
@@ -46,6 +53,6 @@ export default function PreviewView() {
   }, [id, router]);
 
   return (
-    <Post post={post} note={post ? statusToNote(post) : null}/>
+    <Post post={post} note={post && post.status ? statusToNote(post) : null}/>
   );
 }

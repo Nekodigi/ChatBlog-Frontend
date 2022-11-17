@@ -24,6 +24,9 @@ export default function PreviewView() {
       case "wrong_hash":
         note = {message:"URLが間違っています。", type:"danger"};
         break;
+      case "not_found":
+        note = {message:"ページは存在しないか、削除されています。", type:"danger"};
+        break;
     }
     return note;
   }
@@ -35,16 +38,19 @@ export default function PreviewView() {
     const access_db = async () => {//how to use router param in useEffect https://zenn.dev/kiyokiyoabc/articles/d3a8464367094a
       if(router.isReady){
         const res = await (await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/deny/${id}/?hash=${hash}`, {method:'POST'})).text();
-        console.log(res);
         setRes(res);
-        const post = await (await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/preview/${id}`)).json();
-        setPost(post); // stateに反映する
+        if(res !== "not_found"){
+          const post = await(await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/preview/${id}`)).json();
+          setPost(post); // stateに反映する
+        }else{
+          setPost({status:"not_found"});
+        }
       }
     };
     access_db();
   }, [id, router]);
 
   return (
-    <Post post={post} note={post && res ? statusToNote(res, post) : null}/>
+    <Post post={post} note={res && post ? statusToNote(res, post) : null}/>
   );
 }
