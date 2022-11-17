@@ -24,7 +24,7 @@ export default function PreviewView() {
         break;
       case "denied":
         if(post.is_applied){
-          note = {message:"投稿内容に問題があったため、投稿が拒否されました。この投稿は一覧には表示されていまません。内容を見直して再投稿頂けるようお願い致します。", type:"danger"};
+          note = {message:"投稿内容に問題があったため、投稿が拒否されました。この投稿は一覧には表示されていません。内容を見直して再投稿頂けるようお願い致します。", type:"danger"};
         }else{
           note = {message:"投稿内容に問題があったため、投稿が拒否されました。内容を見直して再投稿頂けるようお願い致します。", type:"danger"};
         }
