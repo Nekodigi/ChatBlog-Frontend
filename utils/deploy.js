@@ -11,9 +11,8 @@ const deploy = async () => {
     console.log(NEXT_PUBLIC_API_URL);
     dotenv.config({ path: `.env.local` });
     let API_KEY = process.env.API_KEY;
-    console.log(`${NEXT_PUBLIC_API_URL}/api/apply?hash=${crypto.createHash('md5').update(API_KEY).digest('hex')}`);
     request.post(
-        `${NEXT_PUBLIC_API_URL}/api/apply?hash=${crypto.createHash('md5').update(API_KEY).digest('hex')}`,
+        `${NEXT_PUBLIC_API_URL}/api/apply?hash=${crypto.createHash('md5').update(API_KEY+"apply").digest('hex')}`,
         { json: { key: 'value' } },
         function (error, response, body) {
             if (!error && response.statusCode == 200) {
