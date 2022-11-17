@@ -17,6 +17,9 @@ Then, email will sent to admin and they can approve or deny the post.
 - Interactive posting
 - Admin can manage post
 - Monthly archive
+- Post deletion
+- Post update notification
+- SSG
 # Getting Started
 ## Setup backend
 Backend repository is here.
