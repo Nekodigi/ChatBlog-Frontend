@@ -20,6 +20,8 @@ Then, email will sent to admin and they can approve or deny the post.
 - Post deletion
 - Post update notification
 - SSG
+## Design
+[Open figma design](https://www.figma.com/file/Fe8TbnWzV7Osz2PVzJWTYd/LinePosting(Sandbox)?node-id=0%3A1&t=d6WTaVmHE85iyTc7-1)
 # Getting Started
 ## Setup backend
 Backend repository is here.
